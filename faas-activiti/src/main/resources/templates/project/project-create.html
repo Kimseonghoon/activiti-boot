@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+<title>프로젝트 생성</title>
+
+</head>
+<body>
+	<a href="#" th:href="@{/login?logout}">로그 아웃 </a>	
+	<p>Logged in <span th:text="${name}"></span>!!</p>
+	
+	<div>
+		<form th:action="@{/project/create}" method="POST">
+			<label>Project name</label>: 
+			<input type="text" id="name" name="name" /> <br />
+			<input type="submit" value="프로젝트 생성" id="createProjectButton" />
+		</form>
+	</div>
+	
+</body>
+</html> 

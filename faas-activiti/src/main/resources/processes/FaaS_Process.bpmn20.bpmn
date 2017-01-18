@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://activiti.com/modeler" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/processdef" modeler:version="1.0ev" modeler:exportDateTime="20170108080532" modeler:modelId="993265" modeler:modelVersion="1" modeler:modelLastUpdated="1483862723552">
+  <process id="FaaSProcess" name="FaaS Process" isExecutable="true">
+    <documentation>FaaS Process Modeling</documentation>
+    <startEvent id="startEvent1" activiti:initiator="initiator">
+      <extensionElements>
+        <modeler:editor-resource-id>startEvent1</modeler:editor-resource-id>
+      </extensionElements>
+    </startEvent>
+    <userTask id="createProject" name="프로젝트 생성">
+      <extensionElements>
+        <modeler:allow-send-email>true</modeler:allow-send-email>
+        <modeler:initiator-can-complete>false</modeler:initiator-can-complete>
+        <modeler:editor-resource-id>sid-57D4F6BD-1BEB-400C-98C6-BB3F5D653D23</modeler:editor-resource-id>
+      </extensionElements>
+    </userTask>
+    <sequenceFlow id="sid-CE975641-3FC1-452F-85EA-FD4A04C4D3DF" sourceRef="startEvent1" targetRef="createProject">
+      <extensionElements>
+        <modeler:editor-resource-id>sid-CE975641-3FC1-452F-85EA-FD4A04C4D3DF</modeler:editor-resource-id>
+      </extensionElements>
+    </sequenceFlow>
+    <userTask id="allocateProductDesignEngineer" name="제품설계 엔지니어 할당">
+      <extensionElements>
+        <modeler:allow-send-email>true</modeler:allow-send-email>
+        <modeler:initiator-can-complete>false</modeler:initiator-can-complete>
+        <modeler:editor-resource-id>sid-2255500A-3F4A-43C9-A953-FA31E8C422D4</modeler:editor-resource-id>
+      </extensionElements>
+    </userTask>
+    <sequenceFlow id="sid-CCED8A8B-76FD-4305-B155-9C299F935920" sourceRef="createProject" targetRef="allocateProductDesignEngineer">
+      <extensionElements>
+        <modeler:editor-resource-id>sid-CCED8A8B-76FD-4305-B155-9C299F935920</modeler:editor-resource-id>
+      </extensionElements>
+    </sequenceFlow>
+    <userTask id="validateProductDesign" name="제품설계 검증">
+      <extensionElements>
+        <modeler:allow-send-email>true</modeler:allow-send-email>
+        <modeler:initiator-can-complete>false</modeler:initiator-can-complete>
+        <modeler:editor-resource-id>sid-28958020-1BA6-4365-A06C-77332924AC1C</modeler:editor-resource-id>
+      </extensionElements>
+    </userTask>
+    <sequenceFlow id="sid-3A495430-BE92-4A7B-837B-1E7473198ED0" sourceRef="allocateProductDesignEngineer" targetRef="validateProductDesign">
+      <extensionElements>
+        <modeler:editor-resource-id>sid-3A495430-BE92-4A7B-837B-1E7473198ED0</modeler:editor-resource-id>
+      </extensionElements>
+    </sequenceFlow>
+    <userTask id="acceptProductDesign" name="제품설계 검증승인">
+      <extensionElements>
+        <modeler:allow-send-email>true</modeler:allow-send-email>
+        <modeler:initiator-can-complete>false</modeler:initiator-can-complete>
+        <modeler:editor-resource-id>sid-EFC2F3D6-F111-464D-9984-75524EADCFDA</modeler:editor-resource-id>
+      </extensionElements>
+    </userTask>
+    <sequenceFlow id="sid-E651186F-F447-4150-BCD4-C575F1F1E46D" sourceRef="validateProductDesign" targetRef="acceptProductDesign">
+      <extensionElements>
+        <modeler:editor-resource-id>sid-E651186F-F447-4150-BCD4-C575F1F1E46D</modeler:editor-resource-id>
+      </extensionElements>
+    </sequenceFlow>
+    <exclusiveGateway id="sid-F1693469-E5A8-497C-B1DB-545EBA56315A">
+      <extensionElements>
+        <modeler:editor-resource-id>sid-F1693469-E5A8-497C-B1DB-545EBA56315A</modeler:editor-resource-id>
+      </extensionElements>
+    </exclusiveGateway>
+    <sequenceFlow id="sid-0B87E0E9-2F15-4C26-8CE5-1DDC0D826D89" sourceRef="acceptProductDesign" targetRef="sid-F1693469-E5A8-497C-B1DB-545EBA56315A">
+      <extensionElements>
+        <modeler:editor-resource-id>sid-0B87E0E9-2F15-4C26-8CE5-1DDC0D826D89</modeler:editor-resource-id>
+      </extensionElements>
+    </sequenceFlow>
+    <userTask id="selectFactory" name="공장 선택">
+      <extensionElements>
+        <modeler:allow-send-email>true</modeler:allow-send-email>
+        <modeler:initiator-can-complete>false</modeler:initiator-can-complete>
+        <modeler:editor-resource-id>sid-BF822E82-8B40-41B2-8307-439662160731</modeler:editor-resource-id>
+      </extensionElements>
+    </userTask>
+    <endEvent id="sid-7BEDAD86-3F6D-49A9-A586-5E4DDA5E9D21">
+      <extensionElements>
+        <modeler:editor-resource-id>sid-7BEDAD86-3F6D-49A9-A586-5E4DDA5E9D21</modeler:editor-resource-id>
+      </extensionElements>
+    </endEvent>
+    <sequenceFlow id="sid-8E6F1747-DFF4-46B5-9ED7-D4C6F88A8824" sourceRef="selectFactory" targetRef="sid-7BEDAD86-3F6D-49A9-A586-5E4DDA5E9D21">
+      <extensionElements>
+        <modeler:editor-resource-id>sid-8E6F1747-DFF4-46B5-9ED7-D4C6F88A8824</modeler:editor-resource-id>
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="sid-66DBBAEF-4F84-438A-8566-43EBC06AEFFD" sourceRef="sid-F1693469-E5A8-497C-B1DB-545EBA56315A" targetRef="acceptProductDesign">
+      <extensionElements>
+        <modeler:editor-resource-id>sid-66DBBAEF-4F84-438A-8566-43EBC06AEFFD</modeler:editor-resource-id>
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="sid-AFF47D6C-8F23-4E97-87C8-73225B401A22" sourceRef="sid-F1693469-E5A8-497C-B1DB-545EBA56315A" targetRef="validateProductDesign">
+      <extensionElements>
+        <modeler:editor-resource-id>sid-AFF47D6C-8F23-4E97-87C8-73225B401A22</modeler:editor-resource-id>
+      </extensionElements>
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${accept==false}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="sid-28B7D0F4-1946-4411-8744-D4EBD2085F19" sourceRef="sid-F1693469-E5A8-497C-B1DB-545EBA56315A" targetRef="selectFactory">
+      <extensionElements>
+        <modeler:editor-resource-id>sid-28B7D0F4-1946-4411-8744-D4EBD2085F19</modeler:editor-resource-id>
+      </extensionElements>
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${accept==true}]]></conditionExpression>
+    </sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_FaaSProcess">
+    <bpmndi:BPMNPlane bpmnElement="FaaSProcess" id="BPMNPlane_FaaSProcess">
+      <bpmndi:BPMNShape bpmnElement="startEvent1" id="BPMNShape_startEvent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="101.0" y="157.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="createProject" id="BPMNShape_createProject">
+        <omgdc:Bounds height="80.0" width="100.0" x="165.0" y="135.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="allocateProductDesignEngineer" id="BPMNShape_allocateProductDesignEngineer">
+        <omgdc:Bounds height="80.0" width="100.0" x="310.0" y="136.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="validateProductDesign" id="BPMNShape_validateProductDesign">
+        <omgdc:Bounds height="80.0" width="100.0" x="450.0" y="135.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="acceptProductDesign" id="BPMNShape_acceptProductDesign">
+        <omgdc:Bounds height="80.0" width="100.0" x="585.0" y="135.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sid-F1693469-E5A8-497C-B1DB-545EBA56315A" id="BPMNShape_sid-F1693469-E5A8-497C-B1DB-545EBA56315A">
+        <omgdc:Bounds height="40.0" width="40.0" x="720.0" y="155.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="selectFactory" id="BPMNShape_selectFactory">
+        <omgdc:Bounds height="80.0" width="100.0" x="165.0" y="270.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sid-7BEDAD86-3F6D-49A9-A586-5E4DDA5E9D21" id="BPMNShape_sid-7BEDAD86-3F6D-49A9-A586-5E4DDA5E9D21">
+        <omgdc:Bounds height="35.0" width="35.0" x="310.0" y="292.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sid-CE975641-3FC1-452F-85EA-FD4A04C4D3DF" id="BPMNEdge_sid-CE975641-3FC1-452F-85EA-FD4A04C4D3DF">
+        <omgdi:waypoint x="136.0" y="174.0"></omgdi:waypoint>
+        <omgdi:waypoint x="165.0" y="175.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-CCED8A8B-76FD-4305-B155-9C299F935920" id="BPMNEdge_sid-CCED8A8B-76FD-4305-B155-9C299F935920">
+        <omgdi:waypoint x="265.0" y="175.0"></omgdi:waypoint>
+        <omgdi:waypoint x="310.0" y="176.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-3A495430-BE92-4A7B-837B-1E7473198ED0" id="BPMNEdge_sid-3A495430-BE92-4A7B-837B-1E7473198ED0">
+        <omgdi:waypoint x="410.0" y="176.0"></omgdi:waypoint>
+        <omgdi:waypoint x="450.0" y="175.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-E651186F-F447-4150-BCD4-C575F1F1E46D" id="BPMNEdge_sid-E651186F-F447-4150-BCD4-C575F1F1E46D">
+        <omgdi:waypoint x="550.0" y="175.0"></omgdi:waypoint>
+        <omgdi:waypoint x="585.0" y="175.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-0B87E0E9-2F15-4C26-8CE5-1DDC0D826D89" id="BPMNEdge_sid-0B87E0E9-2F15-4C26-8CE5-1DDC0D826D89">
+        <omgdi:waypoint x="685.0" y="175.0"></omgdi:waypoint>
+        <omgdi:waypoint x="720.0" y="175.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-8E6F1747-DFF4-46B5-9ED7-D4C6F88A8824" id="BPMNEdge_sid-8E6F1747-DFF4-46B5-9ED7-D4C6F88A8824">
+        <omgdi:waypoint x="265.0" y="310.0"></omgdi:waypoint>
+        <omgdi:waypoint x="310.0" y="309.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-66DBBAEF-4F84-438A-8566-43EBC06AEFFD" id="BPMNEdge_sid-66DBBAEF-4F84-438A-8566-43EBC06AEFFD">
+        <omgdi:waypoint x="720.0" y="175.0"></omgdi:waypoint>
+        <omgdi:waypoint x="685.0" y="175.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-AFF47D6C-8F23-4E97-87C8-73225B401A22" id="BPMNEdge_sid-AFF47D6C-8F23-4E97-87C8-73225B401A22">
+        <omgdi:waypoint x="740.0" y="155.0"></omgdi:waypoint>
+        <omgdi:waypoint x="740.0" y="106.0"></omgdi:waypoint>
+        <omgdi:waypoint x="500.0" y="106.0"></omgdi:waypoint>
+        <omgdi:waypoint x="500.0" y="135.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-28B7D0F4-1946-4411-8744-D4EBD2085F19" id="BPMNEdge_sid-28B7D0F4-1946-4411-8744-D4EBD2085F19">
+        <omgdi:waypoint x="740.0" y="195.0"></omgdi:waypoint>
+        <omgdi:waypoint x="740.0" y="244.0"></omgdi:waypoint>
+        <omgdi:waypoint x="215.0" y="244.0"></omgdi:waypoint>
+        <omgdi:waypoint x="215.0" y="270.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

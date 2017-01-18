@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+<title th:text="${title}">Admin</title>
+</head>
+<body>
+	<a href="#" th:href="@{/logout}">로그 아웃 </a>
+	<h1>ADMIN PAGE</h1>
+
+	<h3 th:text="${name}" >TEXT</h3>
+	<h3 th:text="${message}" >TEXT</h3>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+<title>프로젝트 리스트</title>
+</head>
+<body>
+	<a href="#" th:href="@{/login?logout}">로그 아웃 </a>	
+	<p>Logged in <span th:text="${name}"></span>!!</p>
+	
+	<div>
+		<table border="1">
+			<thead>
+				<tr>
+					<th>프로젝트 명</th>
+					<th>상태</th>
+					<th>생성자</th>
+					<th>상세보기</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="project : ${projects}">
+					<td th:text="${project.project.name}">프로젝트 명</td>
+					<td th:text="${project.project.state}">상태</td>
+					<td th:text="${project.task.owner}">생성자</td>
+					<td>
+						<a href="#" th:href="@{/project/detail/}+${project.task.id}" ><input type="button" value="상세보기" /></a> 
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html> 

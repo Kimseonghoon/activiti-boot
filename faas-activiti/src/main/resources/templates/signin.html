@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+<title>Login</title>
+</head>
+<body>
+
+	<h1>Sign In</h1>
+
+	<div>
+
+		<h3>Login with Username and Password</h3>
+
+		<form name='signForm' th:action="@{/signin}" method='POST'>
+
+			<table>
+				<tr>
+					<td>email:</td>
+					<td><input type='text' name='email'/></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type='password' name='password' /></td>
+				</tr>
+				<tr>
+					<td colspan='2'><input name="submit" type="submit" value="submit" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+</body>
+</html>

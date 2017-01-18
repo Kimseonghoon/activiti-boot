@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+<title>프로젝트 상세</title>
+</head>
+<body>
+	<a href="#" th:href="@{/login?logout}">로그 아웃 </a>	
+	<p>Logged in <span th:text="${name}"></span>!!</p>
+	
+	<div>
+		<form th:action="@{/project/allocate/} + ${task.id}" method="POST">
+			<label>프로젝트명</label>: 
+			<input th:field="${project.name}" type="text" /> <br />
+			
+			<label>상태</label>: 
+			<input th:field="${task.name}" type="text" /> <br />
+			
+			<label>생성자</label>: 
+			<input th:field="${task.owner}" type="text" /> <br />
+			
+			<label>모델설계엔지니어</label>: 
+			<input type="text" id="assignee" name="assignee" value="model-engineer@faas.com"/> <br />
+						
+			
+		 	<input type="submit" value="프로젝트 할당"/>
+		</form>
+	</div>
+</body>
+</html> 
